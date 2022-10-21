@@ -12,7 +12,7 @@ export default function ProductsScreen() {
     const [numbers, setNumbers] = useState([]);
     const [activePage, setActivePage] = useState(0);
 
-    const url = "https://bulk-upload-system-by-jitendra.herokuapp.com/products?page=1&limit=10"
+    const url = "https://bulk-upload-system-by-jitendra.herokuapp.com/products?page=1&limit=20"
 
     const [message, setMessage] = useState("");
 
@@ -45,7 +45,7 @@ export default function ProductsScreen() {
     }
 
     const fetchSomeProducts = (item) => {
-        const url = `https://bulk-upload-system-by-jitendra.herokuapp.com/products?page=${item}&limit=10`
+        const url = `https://bulk-upload-system-by-jitendra.herokuapp.com/products?page=${item}&limit=20`
         setActivePage(item)
         setLoading(true);
         axios.get(url)
