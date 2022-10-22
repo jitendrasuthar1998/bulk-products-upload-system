@@ -111,7 +111,7 @@ const ProductItem = ({ item }) => {
             </div>
             <div className='product-details-container'>
                 <p className='row'><span style={{ fontSize: 16, fontWeight: "bold" }}>{item.name}</span> <span style={{ fontWeight: "bold" }}>₹{item.price}</span></p>
-                <p className='row'><span style={{ fontStyle: "italic" }}>{item.category}</span> <span>{item.inStock ? "In Stock - " + `${item.stock}` : "Out of stock"}</span></p>
+                <p className='row'><span style={{ fontStyle: "italic" }}>{item.category}</span> <span>{item.inStock ? "In Stock - " + item.stock  : "Out of stock"}</span></p>
                 <p className='product-description'>{item.description}</p>
                 <button>Add to Cart</button>
             </div>

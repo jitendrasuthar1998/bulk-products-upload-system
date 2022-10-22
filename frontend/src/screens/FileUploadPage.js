@@ -1,10 +1,12 @@
 import React, { useState } from 'react'
 import axios from 'axios';
+import './fileUploadPage.css';
 
-function FileUploadPage() {
+export default function FileUploadPage() {
 
     const [selectedFile, setSelectedFile] = useState();
     const [showProductUploadAlert, setShowProductUploadAlert] = useState(false);
+    const [isFilePicked, setIsFilePicked] = useState(false);
     const [error, setError] = useState("");
     const [message, setMessage] = useState("");
 
@@ -26,6 +28,7 @@ function FileUploadPage() {
         }
 
         setSelectedFile(e.target.files[0]);
+        setIsFilePicked(true);
     }
 
     const uploadFileUrl = "https://bulk-upload-system-by-jitendra.herokuapp.com/products/csv"
@@ -49,7 +52,7 @@ function FileUploadPage() {
 
 
     return (
-        <div style={{ display: "flex", justifyContent: "center", alignItems: "center", flexDirection: "column" }}>
+        <div className='file-upload-container'>
             <h2>Bulk upload products from csv file</h2>
             <input type="file" name='file' onChange={changeHandler} accept=".csv" />
 
@@ -62,20 +65,20 @@ function FileUploadPage() {
                 </ul>
             </div>
 
-            <button style={{ marginTop: 10, paddingRight: 20, paddingLeft: 20, paddingTop: 10, paddingBottom: 10, fontSize: 16 }} onClick={handleSubmission}>Submit</button>
+            <button disabled={!isFilePicked} className="submit-btn" onClick={handleSubmission}>Submit</button>
 
             {
                 showProductUploadAlert && message && (
-                    <div style={{ width: "80%", padding: 20, marginTop: 30, backgroundColor: "lightgreen", borderRadius: 10 }}>
-                        <h2 style={{ textAlign: "center", color: "lavenderblush" }}>{message}</h2>
+                    <div className='success-message'>
+                        <h2 className='message-text'>{message}</h2>
                     </div>
                 )
             }
 
             {
                 error && (
-                    <div style={{ width: "80%", padding: 20, marginTop: 30, backgroundColor: "red", borderRadius: 10 }}>
-                        <h2 style={{ textAlign: "center", color: "lavenderblush" }}>{error}</h2>
+                    <div className='error-message'>
+                        <h2 className='message-text'>{error}</h2>
                     </div>
                 )
             }
@@ -83,5 +86,3 @@ function FileUploadPage() {
         </div>
     )
 }
-
-export default FileUploadPage

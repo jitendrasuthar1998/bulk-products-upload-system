@@ -7,11 +7,11 @@ import { Route, Routes, Link } from 'react-router-dom'
 import "./App.css"
 
 export default function App() {
-  
+
   return (
     <div>
       <nav className='navbar'>
-        <span className='heading'>Bulk upload system</span>
+        <span className='heading'>Bulk Products Upload System</span>
         <ul className='navbar-buttons'>
           <li><Link to="/">Upload Products</Link></li>
           <li><Link to="/products">View Products</Link></li>
