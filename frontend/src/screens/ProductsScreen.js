@@ -22,6 +22,7 @@ export default function ProductsScreen() {
         setLoading(true)
         axios.get(url)
             .then((res) => {
+                console.log("response is == ", JSON.stringify(res.data))
                 if (res.data.data) {
                     setProducts(res.data.data)
                     let numArray = [];

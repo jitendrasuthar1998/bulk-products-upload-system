@@ -57,7 +57,7 @@ const importProductsFromCSV = (req, res) => {
 }
 
 const getProducts = (req, res) => {
-    res.json(res.paginatedResult);
+   return res.status(200).json(res.paginatedResult);
 }
 
 

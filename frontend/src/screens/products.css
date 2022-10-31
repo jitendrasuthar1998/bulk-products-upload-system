@@ -71,11 +71,11 @@ img{
  cursor: pointer;   
 }
 
-@media screen and (max-width:600px) {
+@media screen and (max-width:60rem) {
     .products-container{
         display:grid;
         grid-template-columns: 20rem 20rem; 
-        grid-column:3;
+        grid-column:2;
         justify-content:center;
         align-items:center;
         padding-bottom: 70px;
@@ -83,11 +83,11 @@ img{
     
 }
 
-@media screen and (max-width:360px) {
+@media screen and (max-width:40rem) {
     .products-container{
         display:grid;
         grid-template-columns: 20rem; 
-        grid-column:3;
+        grid-column:1;
         justify-content:center;
         align-items:center;
         padding-bottom: 70px;
